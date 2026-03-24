@@ -63,18 +63,19 @@ parts=()
 # 1. Model
 [ -n "$model" ] && parts+=("$(printf "${MAGENTA}%s${RESET}" "$model")")
 
-# 2. Context: progress bar + percentage
+# 2. Context: progress bar + percentage + actual tokens used / max + conversation tokens
 if [ -n "$used_pct" ]; then
   pct_int=${used_pct%.*}
   color=$(usage_color "$pct_int")
-  parts+=("$(printf "${color}%s %s%%${RESET}" "$(progress_bar "$pct_int")" "$used_pct")")
-fi
-
-# 3. Tokens: progress bar + used/total
-if [ -n "$tokens_used" ] && [ -n "$tokens_total" ] && [ "$tokens_total" -gt 0 ] 2>/dev/null; then
-  tok_pct=$(( tokens_used * 100 / tokens_total ))
-  color=$(usage_color "$tok_pct")
-  parts+=("$(printf "${color}%s %s/%s${RESET}" "$(progress_bar "$tok_pct")" "$tokens_used" "$(fmt_tokens "$tokens_total")")")
+  ctx_str="$(progress_bar "$pct_int") ${used_pct}%"
+  if [ -n "$tokens_total" ] && [ "$tokens_total" -gt 0 ] 2>/dev/null; then
+    actual_used=$(( pct_int * tokens_total / 100 ))
+    ctx_str+=" $(fmt_tokens "$actual_used")/$(fmt_tokens "$tokens_total")"
+  fi
+  if [ -n "$tokens_used" ] && [ "$tokens_used" -gt 0 ] 2>/dev/null; then
+    ctx_str+=" +$(fmt_tokens "$tokens_used")"
+  fi
+  parts+=("$(printf "${color}%s${RESET}" "$ctx_str")")
 fi
 
 # 4. Git branch
