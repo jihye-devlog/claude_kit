@@ -1,0 +1,25 @@
+~/.claude/mistakes.md 파일을 읽었습니다. 아래는 날짜순 실수 요약입니다.
+
+날짜순 실수 목록
+
+2026-03-20 | add-tool README 설치 경로
+- 실수: 스킬 설치 경로를 ~/.claude/skills/ 로 안내
+- 교정: 사용자 추가 스킬은 ~/.claude/commands/ 에 설치해야 함
+- 관련 파일: add-tool/README.md
+
+2026-03-22 | bash echo 대신 Write tool 사용
+- 실수: 파일 생성 시 bash echo 리다이렉션을 사용
+- 교정: 파일 생성/수정은 항상 Write 또는 Edit tool을 사용해야 함
+
+2026-03-24 | 스킬 설치 경로 재반복
+- 실수: 또 다시 스킬 경로를 ~/.claude/skills/ 로 안내
+- 교정: ~/.claude/commands/ 가 올바른 경로
+- 관련 파일: lessons/README.md
+
+---
+
+반복 패턴 경고
+
+"스킬 설치 경로 오류"가 2회 반복되었습니다 (2026-03-20, 2026-03-24).
+
+이 실수는 반복되고 있습니다. 앞으로 스킬 설치 경로는 반드시 ~/.claude/commands/ 임을 기억해야 합니다. ~/.claude/skills/ 는 잘못된 경로입니다.

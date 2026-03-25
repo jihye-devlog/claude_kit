@@ -1,0 +1,1 @@
+{"eval_id": 3, "eval_name": "auto-detection", "prompt": "그게 아니야. 스킬 설치 경로가 ~/.claude/skills/ 가 아니라 ~/.claude/commands/ 야. 스킬은 commands 디렉토리에 설치하는 거야.", "assertions": []}

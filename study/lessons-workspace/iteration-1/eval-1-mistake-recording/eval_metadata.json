@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "mistake-recording",
+  "prompt": "파이썬 스크립트를 실행하려고 했는데 네가 bash 명령어를 `echo 'print(1)' > script.py && python script.py` 이렇게 작성해줬어. 근데 틀렸어 - Write tool을 써야 했는데. 기록해줘.",
+  "assertions": [
+    {"id": "e1-a1", "text": "mistakes_md.txt 파일이 존재하고 비어있지 않다"},
+    {"id": "e1-a2", "text": "날짜 헤더 형식(## YYYY-MM-DD |)이 포함됐다"},
+    {"id": "e1-a3", "text": "'실수:' 필드가 기록됐다"},
+    {"id": "e1-a4", "text": "'교정:' 필드가 기록됐다"},
+    {"id": "e1-a5", "text": "응답이 간결하다 (5줄 이내 완료 알림)"}
+  ]
+}

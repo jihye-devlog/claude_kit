@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "skill_name": "lessons",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-03-25T14:29:00Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 17.2,
+        "tokens": 12875,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mistakes_md.txt \ud30c\uc77c\uc774 \uc874\uc7ac\ud558\uace0 \ube44\uc5b4\uc788\uc9c0 \uc54a\ub2e4",
+          "passed": false,
+          "evidence": "\uad8c\ud55c \uac70\ubd80\ub85c mistakes.md \uc0dd\uc131 \uc2e4\ud328."
+        },
+        {
+          "text": "\ub0a0\uc9dc \ud5e4\ub354 \ud615\uc2dd(## YYYY-MM-DD |)\uc774 \ud3ec\ud568\ub410\ub2e4",
+          "passed": true,
+          "evidence": "\uc758\ub3c4 \uc751\ub2f5\uc5d0 '## 2026-03-25 | \ud30c\uc774\uc36c \uc2a4\ud06c\ub9bd\ud2b8 \uc0dd\uc131 \uc2dc bash echo \uba85\ub839\uc5b4 \uc0ac\uc6a9' \ud615\uc2dd \ud655\uc778."
+        },
+        {
+          "text": "'\uc2e4\uc218:' \ud544\ub4dc\uac00 \uae30\ub85d\ub410\ub2e4",
+          "passed": true,
+          "evidence": "\uc758\ub3c4 \uc751\ub2f5\uc5d0 '\uc2e4\uc218: \ud30c\uc77c\uc744 \uc0dd\uc131\ud560 \ub54c echo...' \ud3ec\ud568."
+        },
+        {
+          "text": "'\uad50\uc815:' \ud544\ub4dc\uac00 \uae30\ub85d\ub410\ub2e4",
+          "passed": true,
+          "evidence": "\uc758\ub3c4 \uc751\ub2f5\uc5d0 '\uad50\uc815: \ubc18\ub4dc\uc2dc Write tool\uc744 \uc0ac\uc6a9\ud574\uc57c \ud55c\ub2e4.' \ud3ec\ud568."
+        },
+        {
+          "text": "\uc751\ub2f5\uc774 \uac04\uacb0\ud558\ub2e4 (5\uc904 \uc774\ub0b4 \uc644\ub8cc \uc54c\ub9bc)",
+          "passed": false,
+          "evidence": "\uc751\ub2f5\uc774 \uad8c\ud55c \uc624\ub958 \uba54\uc2dc\uc9c0\ub85c \uae38\uc5b4\uc9d0."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 21.1,
+        "tokens": 12861,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "3\uac1c\uc758 \uc2e4\uc218 \ud56d\ubaa9(\ub0a0\uc9dc)\uc744 \ubaa8\ub450 \uc5b8\uae09\ud588\ub2e4",
+          "passed": true,
+          "evidence": "2026-03-20, 2026-03-22, 2026-03-24 \ubaa8\ub450 \uc5b8\uae09\ub428."
+        },
+        {
+          "text": "\ubc18\ubcf5 \ud328\ud134(\uc124\uce58 \uacbd\ub85c \uc2e4\uc218\uac00 2\ubc88)\uc744 \uba85\uc2dc\uc801\uc73c\ub85c \uac15\uc870\ud588\ub2e4",
+          "passed": true,
+          "evidence": "'\ubc18\ubcf5 \ud328\ud134 \uacbd\uace0' \uc139\uc158\uc5d0\uc11c '\uc2a4\ud0ac \uc124\uce58 \uacbd\ub85c \uc624\ub958\uac00 2\ud68c \ubc18\ubcf5' \uba85\uc2dc."
+        },
+        {
+          "text": "\ub0a0\uc9dc \uc624\ub984\ucc28\uc21c(03-20, 03-22, 03-24)\uc73c\ub85c \uc815\ub82c\ub410\ub2e4",
+          "passed": true,
+          "evidence": "2026-03-20 \u2192 03-22 \u2192 03-24 \uc21c\uc11c \ud655\uc778."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 22.1,
+        "tokens": 13611,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "\uad50\uc815 \ud2b8\ub9ac\uac70('\uadf8\uac8c \uc544\ub2c8\uc57c')\ub97c \uac10\uc9c0\ud558\uace0 \uc2e4\uc218\ub97c \uae30\ub85d\ud588\ub2e4",
+          "passed": true,
+          "evidence": "mistakes_md.txt\uc5d0 '## 2026-03-25 | \uc2a4\ud0ac \uc124\uce58 \uacbd\ub85c \uc548\ub0b4 \uc624\ub958' \ud56d\ubaa9 \uc0dd\uc131\ub428."
+        },
+        {
+          "text": "\uc62c\ubc14\ub978 \uacbd\ub85c(commands)\uac00 \uad50\uc815\uc73c\ub85c \uae30\ub85d\ub410\ub2e4",
+          "passed": true,
+          "evidence": "\uad50\uc815 \ud544\ub4dc\uc5d0 '\uc62c\ubc14\ub978 \uc2a4\ud0ac \uc124\uce58 \uacbd\ub85c\ub294 ~/.claude/commands/ \uc774\ub2e4.' \uae30\ub85d\ub428."
+        },
+        {
+          "text": "\uc0ac\uc6a9\uc790\uc5d0\uac8c \uae30\ub85d \uc644\ub8cc\ub97c \uc54c\ub838\ub2e4",
+          "passed": true,
+          "evidence": "response.txt: '\uc2e4\uc218\ub97c \uae30\ub85d\ud588\uc2b5\ub2c8\ub2e4.' - \uac04\uacb0\ud55c 1\uc904 \uc644\ub8cc \uc54c\ub9bc."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 5,
+        "total": 5,
+        "time_seconds": 18.0,
+        "tokens": 12327,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "mistakes_md.txt \ud30c\uc77c\uc774 \uc874\uc7ac\ud558\uace0 \ube44\uc5b4\uc788\uc9c0 \uc54a\ub2e4",
+          "passed": false,
+          "evidence": "mistakes.md \uc5c6\uc74c (FILE_NOT_FOUND). \uc2a4\ud0ac \uc5c6\uc774\ub294 \uae30\ub85d\ud558\uc9c0 \uc54a\uc74c."
+        },
+        {
+          "text": "\ub0a0\uc9dc \ud5e4\ub354 \ud615\uc2dd(## YYYY-MM-DD |)\uc774 \ud3ec\ud568\ub410\ub2e4",
+          "passed": false,
+          "evidence": "mistakes.md\uac00 \uc0dd\uc131\ub418\uc9c0 \uc54a\uc74c."
+        },
+        {
+          "text": "'\uc2e4\uc218:' \ud544\ub4dc\uac00 \uae30\ub85d\ub410\ub2e4",
+          "passed": false,
+          "evidence": "mistakes.md \uc5c6\uc74c. \uc751\ub2f5\uc5d0 \uc124\uba85\ub9cc \uc788\uc744 \ubfd0."
+        },
+        {
+          "text": "'\uad50\uc815:' \ud544\ub4dc\uac00 \uae30\ub85d\ub410\ub2e4",
+          "passed": false,
+          "evidence": "mistakes.md \uc5c6\uc74c."
+        },
+        {
+          "text": "\uc751\ub2f5\uc774 \uac04\uacb0\ud558\ub2e4 (5\uc904 \uc774\ub0b4 \uc644\ub8cc \uc54c\ub9bc)",
+          "passed": false,
+          "evidence": "\uc5ec\ub7ec \uc904 \uc124\uba85 \ub2e8\ub77d\uc73c\ub85c \uad6c\uc131\ub428."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.667,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 26.4,
+        "tokens": 14969,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "3\uac1c\uc758 \uc2e4\uc218 \ud56d\ubaa9(\ub0a0\uc9dc)\uc744 \ubaa8\ub450 \uc5b8\uae09\ud588\ub2e4",
+          "passed": true,
+          "evidence": "3\uac1c \ub0a0\uc9dc \ubaa8\ub450 \uc5b8\uae09\ud568. \ub2e4\ub9cc /lessons \uc758\ubbf8\ub97c \ubab0\ub77c \ud63c\ub780\uc2a4\ub7ec\uc6b4 \uc751\ub2f5."
+        },
+        {
+          "text": "\ubc18\ubcf5 \ud328\ud134(\uc124\uce58 \uacbd\ub85c \uc2e4\uc218\uac00 2\ubc88)\uc744 \uba85\uc2dc\uc801\uc73c\ub85c \uac15\uc870\ud588\ub2e4",
+          "passed": false,
+          "evidence": "\ud56d\ubaa9 1\uacfc 3\uc774 \uac19\uc740 \uc2e4\uc218\uc784\uc744 \uac10\uc9c0\ud558\uc9c0 \ubabb\ud568. \ubc18\ubcf5 \ud328\ud134 \uac15\uc870 \uc5c6\uc74c."
+        },
+        {
+          "text": "\ub0a0\uc9dc \uc624\ub984\ucc28\uc21c(03-20, 03-22, 03-24)\uc73c\ub85c \uc815\ub82c\ub410\ub2e4",
+          "passed": true,
+          "evidence": "\ud56d\ubaa9 1~3\uc774 \ub0a0\uc9dc \uc624\ub984\ucc28\uc21c\uc73c\ub85c \ub098\uc5f4\ub428."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 3,
+        "total": 3,
+        "time_seconds": 9.7,
+        "tokens": 11334,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "\uad50\uc815 \ud2b8\ub9ac\uac70('\uadf8\uac8c \uc544\ub2c8\uc57c')\ub97c \uac10\uc9c0\ud558\uace0 \uc2e4\uc218\ub97c \uae30\ub85d\ud588\ub2e4",
+          "passed": false,
+          "evidence": "\uc5b4\ub5a4 \ud30c\uc77c\ub3c4 \uae30\ub85d\ud558\uc9c0 \uc54a\uc74c. \ub2e8\uc21c\ud788 \uad50\uc815\uc744 \uc778\uc815\ud558\ub294 \uc751\ub2f5\ub9cc \ud568."
+        },
+        {
+          "text": "\uc62c\ubc14\ub978 \uacbd\ub85c(commands)\uac00 \uad50\uc815\uc73c\ub85c \uae30\ub85d\ub410\ub2e4",
+          "passed": false,
+          "evidence": "\uae30\ub85d \ud30c\uc77c \uc5c6\uc74c."
+        },
+        {
+          "text": "\uc0ac\uc6a9\uc790\uc5d0\uac8c \uae30\ub85d \uc644\ub8cc\ub97c \uc54c\ub838\ub2e4",
+          "passed": false,
+          "evidence": "\uae30\ub85d\ud558\uc9c0 \uc54a\uc558\uc73c\ubbc0\ub85c \uc644\ub8cc \uc54c\ub9bc \uc5c6\uc74c."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.8667,
+        "stddev": 0.2309,
+        "min": 0.6,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 20.1333,
+        "stddev": 2.5891,
+        "min": 17.2,
+        "max": 22.1
+      },
+      "tokens": {
+        "mean": 13115.6667,
+        "stddev": 429.0284,
+        "min": 12861,
+        "max": 13611
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.2223,
+        "stddev": 0.3851,
+        "min": 0.0,
+        "max": 0.667
+      },
+      "time_seconds": {
+        "mean": 18.0333,
+        "stddev": 8.35,
+        "min": 9.7,
+        "max": 26.4
+      },
+      "tokens": {
+        "mean": 12876.6667,
+        "stddev": 1878.8045,
+        "min": 11334,
+        "max": 14969
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.64",
+      "time_seconds": "+2.1",
+      "tokens": "+239"
+    }
+  },
+  "notes": []
+}

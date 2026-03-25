@@ -1,0 +1,11 @@
+[PERMISSION DENIED - 파일 쓰기 권한 거부됨]
+
+에이전트가 의도한 동작:
+실수를 기록하려 했으나 Write tool과 Bash tool이 모두 거부됨.
+
+기록하려 했던 내용:
+## 2026-03-25 | 파이썬 스크립트 생성 시 bash echo 명령어 사용
+
+실수: 파일을 생성할 때 `echo 'print(1)' > script.py && python script.py`처럼 bash echo 리디렉션을 사용했다.
+교정: 파일을 생성할 때는 반드시 Write tool을 사용해야 한다. bash echo 리디렉션은 특수문자 처리나 인코딩 문제가 생길 수 있으며, Write tool이 더 안전하고 명확하다.
+파일/기능: 파이썬 스크립트 파일 생성

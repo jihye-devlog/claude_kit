@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "mistakes_md.txt 파일이 존재하고 비어있지 않다", "passed": false, "evidence": "mistakes.md 없음 (FILE_NOT_FOUND). 스킬 없이는 기록하지 않음."},
+    {"text": "날짜 헤더 형식(## YYYY-MM-DD |)이 포함됐다", "passed": false, "evidence": "mistakes.md가 생성되지 않음."},
+    {"text": "'실수:' 필드가 기록됐다", "passed": false, "evidence": "mistakes.md 없음. 응답에 설명만 있을 뿐."},
+    {"text": "'교정:' 필드가 기록됐다", "passed": false, "evidence": "mistakes.md 없음."},
+    {"text": "응답이 간결하다 (5줄 이내 완료 알림)", "passed": false, "evidence": "여러 줄 설명 단락으로 구성됨."}
+  ],
+  "summary": {"passed": 0, "failed": 5, "total": 5, "pass_rate": 0.0}
+}

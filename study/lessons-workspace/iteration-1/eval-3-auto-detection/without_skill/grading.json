@@ -1,0 +1,24 @@
+{
+  "eval_id": 3,
+  "run": "without_skill",
+  "expectations": [
+    {
+      "text": "교정 트리거('그게 아니야')를 감지하고 실수를 기록했다",
+      "passed": false,
+      "evidence": "어떤 파일도 기록하지 않음. 단순히 교정을 인정하고 앞으로 잘하겠다는 응답만 함."
+    },
+    {
+      "text": "올바른 경로(commands)가 교정으로 기록됐다",
+      "passed": false,
+      "evidence": "기록 파일 없음."
+    },
+    {
+      "text": "사용자에게 기록 완료를 알렸다",
+      "passed": false,
+      "evidence": "기록하지 않았으므로 완료 알림 없음. '앞으로는 정확한 경로인 ~/.claude/commands/ 를 사용할게'는 기록 완료 알림이 아님."
+    }
+  ],
+  "pass_count": 0,
+  "total_count": 3,
+  "pass_rate": 0.0
+}

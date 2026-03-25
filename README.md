@@ -23,9 +23,12 @@ claude_kit/
 ├── add-tool/
 │   ├── add-tool.md
 │   └── README.md
-└── lessons/
-    ├── lessons.md
-    └── README.md
+├── lessons/
+│   ├── lessons.md
+│   └── README.md
+└── study/
+    ├── plugin.md
+    └── lessons-workspace/
 ```
 
 ## 목록

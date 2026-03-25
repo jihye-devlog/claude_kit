@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "교정 트리거('그게 아니야')를 감지하고 실수를 기록했다", "passed": true, "evidence": "mistakes_md.txt에 '## 2026-03-25 | 스킬 설치 경로 안내 오류' 항목 생성됨."},
+    {"text": "올바른 경로(commands)가 교정으로 기록됐다", "passed": true, "evidence": "교정 필드에 '올바른 스킬 설치 경로는 ~/.claude/commands/ 이다.' 기록됨."},
+    {"text": "사용자에게 기록 완료를 알렸다", "passed": true, "evidence": "response.txt: '실수를 기록했습니다.' - 간결한 1줄 완료 알림."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0}
+}
