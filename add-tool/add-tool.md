@@ -11,7 +11,7 @@
 - `/add-tool` 실행 후 대화로 명령어와 경로 수집
 
 명령어: 슬래시 커맨드명 또는 스크립트 실행 명령 (예: `save-progress`, `statusline.sh`)
-파일경로: 도구 파일의 절대경로 또는 `~` 경로 (예: `~/.claude/skills/save-progress.md`)
+파일경로: 도구 파일의 절대경로 또는 `~` 경로 (예: `~/.claude/commands/save-progress.md`)
 
 ## 실행 절차
 
@@ -22,7 +22,7 @@
 - 도구의 목적과 기능 요약
 - 도구 유형 판별: 스킬(`.md`) / 에이전트(`.md`) / 스크립트(`.sh` 등)
 - 설치 또는 설정에 필요한 대상 경로
-  - 스킬: `~/.claude/skills/`
+  - 스킬: `~/.claude/commands/`
   - 에이전트: `~/.claude/agents/`
   - 스크립트: `~/.claude/` 또는 사용자 지정 경로
 - 추가 설정이 필요한 경우: `settings.json` 항목 등
@@ -63,7 +63,7 @@
 
 스킬인 경우:
 ```bash
-cp <명령어명>/<파일명> ~/.claude/skills/<파일명>
+cp <명령어명>/<파일명> ~/.claude/commands/<파일명>
 ```
 Claude Code 재시작 후 `/<명령어명>` 으로 사용 가능하다고 안내한다.
 

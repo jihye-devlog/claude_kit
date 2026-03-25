@@ -8,7 +8,7 @@
 스킬 파일을 글로벌 스킬 디렉토리에 복사합니다.
 
 ```bash
-cp save-progress/save-progress.md ~/.claude/skills/save-progress.md
+cp save-progress/save-progress.md ~/.claude/commands/save-progress.md
 ```
 
 Claude Code를 재시작하면 `/save-progress` 슬래시 커맨드로 사용할 수 있습니다.
