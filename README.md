@@ -11,6 +11,13 @@ claude_kit/
 │       ├── code-researcher.md
 │       ├── planner.md
 │       └── design-architect.md
+├── custom_script/
+│   ├── notification/
+│   │   ├── notify.sh
+│   │   └── README.md
+│   └── statusline/
+│       ├── statusline.sh
+│       └── README.md
 ├── custom_skills/
 │   ├── add-tool/
 │   │   ├── add-tool.md
@@ -25,12 +32,6 @@ claude_kit/
 │       ├── sync-readme.md
 │       ├── check-sync.sh
 │       └── README.md
-├── statusline/
-│   ├── statusline.sh
-│   └── README.md
-├── notification/
-│   ├── notify.sh
-│   └── README.md
 └── study/
     ├── plugin.md
     └── lessons-workspace/
