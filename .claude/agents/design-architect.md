@@ -2,7 +2,7 @@
 name: design-architect
 description: "Use this agent when a PLAN.md exists and the user needs to create a DESIGN.md based on it. This agent performs the full design phase as defined in CLAUDE.md: translating plans into code-level architecture, detailed specifications, file paths, code snippets, and trade-off analysis before any implementation begins.\\n\\n<example>\\nContext: The user has completed a PLAN.md and wants to proceed to the design phase.\\nuser: \"PLAN.md 작성이 완료됐어. 이제 설계 단계로 넘어가자\"\\nassistant: \"네, design-architect 에이전트를 실행하여 DESIGN.md를 작성하겠습니다.\"\\n<commentary>\\nThe user has a PLAN.md ready and wants to proceed to the design phase. Use the design-architect agent to create DESIGN.md.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user asks to write a design document after reviewing the plan.\\nuser: \"PLAN.md 검토했어. DESIGN.md 작성해줘\"\\nassistant: \"DESIGN.md 작성을 시작하겠습니다. design-architect 에이전트를 실행할게요.\"\\n<commentary>\\nThe user explicitly requests DESIGN.md creation. Launch the design-architect agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user completed the planning step and is ready to design before implementation.\\nuser: \"설계 단계 진행해줘\"\\nassistant: \"설계 단계를 시작하겠습니다. design-architect 에이전트를 사용해 DESIGN.md를 작성할게요.\"\\n<commentary>\\nUser wants to proceed with the design phase. Use design-architect agent to produce DESIGN.md.\\n</commentary>\\n</example>"
 model: sonnet
-color: orange
+color: pink
 memory: project
 ---
 

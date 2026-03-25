@@ -2,8 +2,8 @@
 name: skill-executor
 description: "Use this agent when a custom skill (add-tool, lessons, save-progress, sync-readme, etc.) needs to be executed either by user request or by an automatic trigger. This agent runs skills in a sub-context to keep the main context clean and focused on the primary task.\\n\\nExamples:\\n\\n1. User explicitly requests a skill:\\n   user: \"save-progress 실행해줘\"\\n   assistant: \"save-progress 스킬을 실행하겠습니다.\"\\n   <Agent tool call: skill-executor with instruction to run save-progress>\\n\\n2. Trigger-based execution after code implementation:\\n   user: \"구현해줘\"\\n   assistant: (implements code, completes a feature)\\n   <commentary>\\n   코드 구현이 완료되었으므로 sync-readme 스킬을 트리거하여 README를 동기화해야 한다. Agent tool로 skill-executor를 실행한다.\\n   </commentary>\\n   assistant: \"구현이 완료되었습니다. README 동기화를 위해 skill-executor를 실행하겠습니다.\"\\n   <Agent tool call: skill-executor with instruction to run sync-readme>\\n\\n3. After making a mistake or learning something:\\n   assistant: (discovers a pattern or mistake during work)\\n   <commentary>\\n   실수 패턴을 기록해야 하므로 lessons 스킬을 skill-executor 에이전트로 실행한다.\\n   </commentary>\\n   assistant: \"lessons 스킬을 실행하여 기록하겠습니다.\"\\n   <Agent tool call: skill-executor with instruction to run lessons>\\n\\n4. Adding a new tool to the project:\\n   user: \"새 스킬 추가해줘\"\\n   assistant: \"add-tool 스킬을 실행하겠습니다.\"\\n   <Agent tool call: skill-executor with instruction to run add-tool>\\n\\n5. Proactive trigger after session progress:\\n   assistant: (completes a significant chunk of work)\\n   <commentary>\\n   작업 진행 상황을 저장해야 한다. save-progress 스킬을 skill-executor로 실행한다.\\n   </commentary>\\n   <Agent tool call: skill-executor with instruction to run save-progress>"
 model: haiku
-color: purple
-memory: project
+color: cyan
+memory: user
 ---
 
 커스텀 스킬(add-tool, lessons, save-progress, sync-readme 및 기타 커스텀 스킬)을 격리된 서브 컨텍스트에서 실행하는 전담 스킬 실행 에이전트이다. 메인 대화 컨텍스트에서 스킬 실행을 분리하여 깔끔하고 집중된 상태를 유지하는 것이 목적이다.
