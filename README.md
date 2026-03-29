@@ -12,6 +12,9 @@ claude_kit/
 │       ├── planner.md
 │       └── design-architect.md
 ├── custom_script/
+│   ├── keybindings/
+│   │   ├── keybindings.json
+│   │   └── README.md
 │   ├── notification/
 │   │   ├── notify.sh
 │   │   └── README.md
@@ -41,8 +44,9 @@ claude_kit/
 
 | 경로 | 유형 | 설명 |
 |------|------|------|
-| [statusline](./statusline) | 스크립트 | Claude Code 하단 상태바 커스터마이징 |
-| [notification](./notification) | 스크립트 | 작업 완료 및 응답 필요 시 OS 네이티브 알림 전송 |
+| [keybindings](./custom_script/keybindings) | 설정 | CLI 키바인딩 커스터마이징 (Shift+Enter 줄바꿈 등) |
+| [statusline](./custom_script/statusline) | 스크립트 | Claude Code 하단 상태바 커스터마이징 |
+| [notification](./custom_script/notification) | 스크립트 | 작업 완료 및 응답 필요 시 OS 네이티브 알림 전송 |
 | [save-progress](./custom_skills/save-progress) | 스킬 | 세션 진행 상황을 메모리 파일에 저장해 다음 세션에서 이어받기 |
 | [add-tool](./custom_skills/add-tool) | 스킬 | 스킬/에이전트/스크립트 파일을 레포에 자동 등록 |
 | [lessons](./custom_skills/lessons) | 스킬 | Claude 실수를 기록하고 반복 방지 |
