@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo apt:*)",
+      "Bash(bash /workspace/sofia_project/claude_kit/custom_script/notification/notify.sh 'Claude Code' '테스트 알림입니다' 2>&1)"
+    ]
+  }
+}

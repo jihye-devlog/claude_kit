@@ -7,7 +7,8 @@ Claude Code 작업 완료 및 사용자 응답 필요 시 OS 네이티브 알림
 | OS | 방식 | 비고 |
 |---|---|---|
 | macOS | osascript | 기본 내장 |
-| Linux | notify-send | libnotify 설치 필요 |
+| Linux (네이티브) | notify-send | libnotify 설치 필요 |
+| WSL2 | PowerShell BalloonTip | 자동 감지 후 Windows 알림 사용 |
 | Windows | PowerShell BalloonTip | Git Bash 환경 기준 |
 
 ## 알림 시점
@@ -59,7 +60,8 @@ chmod +x ~/.claude/notify.sh
 
 - `bash` 4.0+
 - macOS: 없음 (osascript 기본 내장)
-- Linux: `libnotify` (`sudo apt install libnotify-bin` 또는 `brew install libnotify`)
+- Linux (네이티브): `libnotify` (`sudo apt install libnotify-bin`)
+- WSL2: 없음 (PowerShell 자동 감지)
 - Windows: PowerShell (Git Bash 환경)
 
 ## 동작 방식
@@ -69,3 +71,5 @@ chmod +x ~/.claude/notify.sh
 ```
 stdin JSON (.message) --> notify.sh --> OS 네이티브 알림
 ```
+
+Linux 환경에서는 WSL2 여부를 `/proc/version`으로 자동 감지합니다. WSL2인 경우 `notify-send` 대신 `powershell.exe`를 통해 Windows 네이티브 알림을 전송하므로 D-Bus 서비스가 없어도 정상 동작합니다.
