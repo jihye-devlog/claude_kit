@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(sudo apt:*)",
-      "Bash(bash /workspace/sofia_project/claude_kit/custom_script/notification/notify.sh 'Claude Code' '테스트 알림입니다' 2>&1)"
+      "Bash(bash /workspace/sofia_project/claude_kit/custom_script/notification/notify.sh 'Claude Code' '테스트 알림입니다' 2>&1)",
+      "Bash(command -v notify-send 2>/dev/null && echo \"found\" || echo \"not found\")",
+      "Bash(bash ~/.claude/notify.sh 'Claude Code' '테스트' 2>&1; echo \"exit code: $?\")"
     ]
   }
 }
