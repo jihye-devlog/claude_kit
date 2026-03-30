@@ -28,6 +28,9 @@ claude_kit/
 │   ├── lessons/
 │   │   ├── lessons.md
 │   │   └── README.md
+│   ├── review/
+│   │   ├── review.md
+│   │   └── README.md
 │   ├── save-progress/
 │   │   ├── save-progress.md
 │   │   └── README.md
@@ -50,6 +53,7 @@ claude_kit/
 | [save-progress](./custom_skills/save-progress) | 스킬 | 세션 진행 상황을 메모리 파일에 저장해 다음 세션에서 이어받기 |
 | [add-tool](./custom_skills/add-tool) | 스킬 | 스킬/에이전트/스크립트 파일을 레포에 자동 등록 |
 | [lessons](./custom_skills/lessons) | 스킬 | Claude 실수를 기록하고 반복 방지 |
+| [review](./custom_skills/review) | 스킬 | 작업 완료 후 변경된 코드와 파일을 자체 검토하고 문제 수정 |
 | [sync-readme](./custom_skills/sync-readme) | 스킬 | 레포 유형을 분석해 변경 사항에 맞는 README 자동 업데이트 |
 | [.claude/agents/code-researcher.md](./.claude/agents/code-researcher.md) | 에이전트 | 코드베이스를 분석해 구조, 동작, 아키텍처를 파악하고 RESEARCH.md 작성 |
 | [.claude/agents/planner.md](./.claude/agents/planner.md) | 에이전트 | 사용자 요청과 RESEARCH.md를 기반으로 구현 계획을 수립하고 PLAN.md 작성 |
