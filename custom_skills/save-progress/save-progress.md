@@ -62,7 +62,7 @@ type: project
 
 #### .claude/memory/feedback_workflow.md
 
-이 파일은 최초 생성 시에만 작성한다. 이미 존재하면 건드리지 않는다.
+기존 파일이 있으면 기존 내용을 유지하고, 이번 세션에서 새로 확인된 피드백만 추가한다.
 
 ```
 ---
@@ -71,7 +71,29 @@ description: 이 프로젝트에서 사용자가 확인한 작업 방식 및 규
 type: feedback
 ---
 
-(대화 중 사용자가 확인하거나 수정한 작업 방식 규칙을 기록한다)
+(대화 중 사용자가 확인하거나 수정한 작업 방식 규칙을 누적 기록한다)
+```
+
+#### .claude/memory/session_decisions.md
+
+이 파일은 세션마다 새로 작성한다. 기존 내용을 덮어쓴다.
+
+```
+---
+name: 세션 주요 결정
+description: 이번 세션에서 논의된 핵심 결정, 변경 이유, 중요 맥락
+type: project
+---
+
+## 주요 결정 사항
+(대화 중 내려진 설계, 구현, 방향 관련 결정을 시간순으로 나열한다)
+(각 항목에 결정 내용과 그 이유를 함께 기록한다)
+
+## 변경 이력
+(이번 세션에서 변경한 파일과 변경 이유를 요약한다)
+
+## 다음 세션에 전달할 맥락
+(단순 진행 상태가 아닌, 다음 작업자가 알아야 할 배경 정보나 주의사항)
 ```
 
 #### .claude/memory/MEMORY.md
@@ -84,6 +106,9 @@ type: feedback
 
 ## 프로젝트 컨텍스트
 - [project_context.md](project_context.md) - (한 줄 설명)
+
+## 세션 주요 결정
+- [session_decisions.md](session_decisions.md) - (한 줄 설명)
 
 ## 작업 방식 피드백
 - [feedback_workflow.md](feedback_workflow.md) - (한 줄 설명)
