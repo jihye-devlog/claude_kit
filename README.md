@@ -10,7 +10,10 @@ claude_kit/
 │   └── agents/
 │       ├── code-researcher.md
 │       ├── planner.md
-│       └── design-architect.md
+│       ├── design-architect.md
+│       ├── senior-clean-architect.md
+│       ├── skill-executor.md
+│       └── translator.md
 ├── custom_script/
 │   ├── keybindings/
 │   │   ├── keybindings.json
@@ -58,3 +61,6 @@ claude_kit/
 | [.claude/agents/code-researcher.md](./.claude/agents/code-researcher.md) | 에이전트 | 코드베이스를 분석해 구조, 동작, 아키텍처를 파악하고 RESEARCH.md 작성 |
 | [.claude/agents/planner.md](./.claude/agents/planner.md) | 에이전트 | 사용자 요청과 RESEARCH.md를 기반으로 구현 계획을 수립하고 PLAN.md 작성 |
 | [.claude/agents/design-architect.md](./.claude/agents/design-architect.md) | 에이전트 | PLAN.md를 기반으로 코드 수준의 아키텍처를 설계하고 DESIGN.md 작성 |
+| [.claude/agents/senior-clean-architect.md](./.claude/agents/senior-clean-architect.md) | 에이전트 | DESIGN.md와 PLAN.md를 기반으로 클린 아키텍처 원칙에 따라 실제 코드와 TC 구현 |
+| [.claude/agents/skill-executor.md](./.claude/agents/skill-executor.md) | 에이전트 | 커스텀 스킬을 서브 컨텍스트에서 실행해 메인 컨텍스트를 깨끗하게 유지 |
+| [.claude/agents/translator.md](./.claude/agents/translator.md) | 에이전트 | 파일이나 텍스트를 지정한 언어로 번역 및 로컬라이즈 |

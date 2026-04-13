@@ -4,7 +4,11 @@
       "Bash(sudo apt:*)",
       "Bash(bash /workspace/sofia_project/claude_kit/custom_script/notification/notify.sh 'Claude Code' '테스트 알림입니다' 2>&1)",
       "Bash(command -v notify-send 2>/dev/null && echo \"found\" || echo \"not found\")",
-      "Bash(bash ~/.claude/notify.sh 'Claude Code' '테스트' 2>&1; echo \"exit code: $?\")"
+      "Bash(bash ~/.claude/notify.sh 'Claude Code' '테스트' 2>&1; echo \"exit code: $?\")",
+      "Read(//home/sofia/.claude/plugins/**)",
+      "Read(//home/sofia/.claude/**)",
+      "Bash(sed -i '82,$d' /workspace/sofia_project/claude_kit/.claude/agents/senior-clean-architect.md)",
+      "Bash(sed -i -e '$a\\\\' /workspace/sofia_project/claude_kit/.claude/agents/senior-clean-architect.md)"
     ]
   }
 }
