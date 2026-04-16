@@ -8,7 +8,13 @@
       "Read(//home/sofia/.claude/plugins/**)",
       "Read(//home/sofia/.claude/**)",
       "Bash(sed -i '82,$d' /workspace/sofia_project/claude_kit/.claude/agents/senior-clean-architect.md)",
-      "Bash(sed -i -e '$a\\\\' /workspace/sofia_project/claude_kit/.claude/agents/senior-clean-architect.md)"
+      "Bash(sed -i -e '$a\\\\' /workspace/sofia_project/claude_kit/.claude/agents/senior-clean-architect.md)",
+      "Bash(mv code-researcher.md researcher.md)",
+      "Bash(mv design-architect.md designer.md)",
+      "Bash(mv senior-clean-architect.md builder.md)",
+      "Bash(mv test-case-writer.md tester.md)",
+      "Bash(mv builder.md implementer.md)",
+      "Bash(mv tester.md tc-writer.md)"
     ]
   }
 }
