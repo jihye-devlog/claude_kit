@@ -10,15 +10,14 @@ cp review/review.md ~/.claude/commands/review.md
 
 Claude Code 재시작 후 `/review` 로 수동 실행 가능하다.
 
-자동 실행을 위해 `~/.claude/settings.json` 의 `PostToolUse` 훅에 아래 항목을 추가한다.
+자동 실행을 위해 `~/.claude/settings.json` 의 `Stop` 훅에 아래 항목을 추가한다. `Stop` 훅은 Claude 가 작업을 종료하려 할 때 한 번만 발동하므로 중간 편집 흐름을 끊지 않는다.
 
 ```json
 {
-  "matcher": "Edit|Write",
   "hooks": [
     {
       "type": "prompt",
-      "prompt": "파일이 변경되었습니다. 사용자에게 최종 보고를 하기 전에 반드시 review 스킬을 실행하여 변경된 파일을 자체 검토하고 발견된 문제를 수정하세요. 이미 이번 턴에 review 스킬이 실행된 경우에는 중복 실행하지 마세요."
+      "prompt": "이번 턴에 Claude 가 직접 Edit/Write 로 편집·생성한 파일이 있는지 먼저 확인하세요. 편집된 파일이 전혀 없다면(단순 질문·설명·조회 응답 등) 아무 보고도 하지 말고 즉시 종료를 허용하세요. 편집된 파일이 README.md 만이거나 이번 턴의 파일 변경이 sync-readme 스킬 실행의 결과물로만 이루어진 경우에도 실행하지 말고 종료를 허용하세요. 그 외에 실제 코드·문서 편집이 있고 이번 턴에 review 스킬이 아직 실행되지 않았다면 review 스킬을 실행하여 자체 검토하고 발견된 문제를 수정하세요. 이미 이번 턴에 review 가 실행되었다면 종료를 허용하세요."
     }
   ]
 }
@@ -26,7 +25,7 @@ Claude Code 재시작 후 `/review` 로 수동 실행 가능하다.
 
 ## 사용 방법
 
-자동 실행: Edit 또는 Write 도구로 파일이 수정되면 PostToolUse 훅이 발동해 보고 전에 자동 실행된다.
+자동 실행: Claude 가 작업을 종료하려 할 때 Stop 훅이 발동해 변경 파일을 자체 검토한다. 편집 중간에는 흐름을 끊지 않는다.
 수동 실행: `/review` 슬래시 커맨드로 직접 실행할 수 있다.
 
 ## 동작 방식
