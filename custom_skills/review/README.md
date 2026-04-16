@@ -17,7 +17,7 @@ Claude Code 재시작 후 `/review` 로 수동 실행 가능하다.
   "hooks": [
     {
       "type": "prompt",
-      "prompt": "STRICT 판정 규칙 - 가장 마지막 user 메시지 이후 현재 assistant 턴에서 Claude가 '직접' Edit 또는 Write 도구를 호출한 적이 있는지만 확인하세요. 이전 턴들의 편집 이력은 절대 포함하지 마세요. 판정 결과에 따라 다음 중 하나만 수행하세요: (1) 이번 턴에 Edit/Write 호출이 전혀 없었다면(단순 질문·설명·조회·chat 응답 등) 아무 보고도 하지 말고 즉시 종료를 허용하세요. (2) 이번 턴 편집 파일이 README.md 자체뿐이거나 sync-readme 스킬 실행의 결과물뿐이라면 실행하지 말고 즉시 종료를 허용하세요. (3) 그 외에 이번 턴에 실제 코드·문서 편집이 있고 review 스킬이 아직 실행되지 않았다면 review 스킬을 실행하여 자체 검토하고 발견된 문제를 수정하세요. 이미 이번 턴에 review 가 실행되었다면 종료를 허용하세요."
+      "prompt": "이번 턴 Edit/Write 없거나 README/sync-readme 산출물뿐이면 종료. 그 외 코드·문서 편집 있고 review 미실행이면 review 스킬 실행."
     }
   ]
 }
