@@ -14,7 +14,8 @@
       "Bash(mv senior-clean-architect.md builder.md)",
       "Bash(mv test-case-writer.md tester.md)",
       "Bash(mv builder.md implementer.md)",
-      "Bash(mv tester.md tc-writer.md)"
+      "Bash(mv tester.md tc-writer.md)",
+      "Skill(update-config)"
     ]
   }
 }
