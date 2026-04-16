@@ -18,7 +18,7 @@ memory: project
 | 모드 | 트리거 | 실행 범위 |
 | --- | --- | --- |
 | Quick | implementer 항목 구현 직후 | 빌드 + 린트 + 포매터 + 타입 체크 (테스트 제외) |
-| Test | tc-writer TC 작성 직후 또는 사용자 요청 | 지정 테스트 또는 전체 단위/통합 테스트만 |
+| Test | 사용자 직접 요청 | 지정 테스트 또는 전체 단위/통합 테스트만 |
 | Full | implementer 파이프라인 종료 / Stop 훅 / 사용자 직접 호출 | Quick + 단위 + 통합 테스트 전체 |
 
 호출자가 모드 인수를 전달하지 않으면 기본값은 Full.
@@ -83,9 +83,8 @@ memory: project
 | --- | --- | --- |
 | implementer (각 항목 직후) | Quick | 통과/실패와 카테고리 반환 → implementer 가 다음 단계 진행 또는 수정 루프 |
 | implementer (파이프라인 종료) | Full | 전체 요약 반환 → implementer 가 사용자에게 최종 보고 |
-| tc-writer (선택) | Test | 해당 항목 테스트 결과 반환 |
-| Stop 훅 (skill-executor 경유) | Full | 결과를 사용자에게 직접 보고 |
-| 사용자 직접 호출 | Full (기본) 또는 지정 | 사용자에게 상세 보고 |
+| Stop 훅 (Agent 도구) | Full | 결과를 사용자에게 직접 보고 |
+| 사용자 직접 호출 | Full (기본) 또는 지정 (Quick/Test) | 사용자에게 상세 보고 |
 
 ## 에이전트 메모리 업데이트
 기록할 내용.

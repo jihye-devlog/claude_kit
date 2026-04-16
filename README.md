@@ -70,7 +70,7 @@ claude_kit/
 | [.claude/agents/designer.md](./.claude/agents/designer.md) | 에이전트 | PLAN.md를 기반으로 코드 수준의 아키텍처를 설계하고 .claude/doc/DESIGN.md 작성 |
 | [.claude/agents/implementer.md](./.claude/agents/implementer.md) | 에이전트 | DESIGN.md와 PLAN.md를 기반으로 클린 아키텍처 원칙에 따라 실제 코드를 구현. 각 항목 완료 후 tc-writer를 자동 호출하고 WRITE/SKIP/DEFER 판정을 처리하며, 지연 TC 대기 큐를 관리하는 항목 단위 순차 파이프라인 실행 |
 | [.claude/agents/tc-writer.md](./.claude/agents/tc-writer.md) | 에이전트 | 각 구현 항목마다 2단계 사전 평가(WRITE/SKIP/DEFER)를 수행하여 TC 필요성과 시점을 판정. WRITE인 항목의 TC를 작성하고 코드 결함을 보고 (implementer와 협업) |
-| [.claude/agents/verifier.md](./.claude/agents/verifier.md) | 에이전트 | 변경 코드를 프로젝트별 빌드/린트/포매터/타입/테스트 명령으로 검증. Quick/Test/Full 3가지 모드 지원. CLAUDE.md '## 빌드 & 테스트' 섹션에서 명령을 읽고 실패 시 카테고리별로 implementer 또는 tc-writer 재호출 안내 |
+| [.claude/agents/verifier.md](./.claude/agents/verifier.md) | 에이전트 | 변경 코드를 프로젝트별 빌드/린트/포매터/타입/테스트 명령으로 검증. implementer 항목 단위(Quick) / 사용자 직접 요청(Test) / 파이프라인 종료 및 Stop 훅(Full) 모드 지원. CLAUDE.md '## 빌드 & 테스트' 섹션에서 명령을 읽고 실패 시 카테고리별로 implementer 또는 tc-writer 재호출 안내 |
 | [.claude/agents/skill-executor.md](./.claude/agents/skill-executor.md) | 에이전트 | 커스텀 스킬을 서브 컨텍스트에서 실행해 메인 컨텍스트를 깨끗하게 유지 |
 | [.claude/agents/translator.md](./.claude/agents/translator.md) | 에이전트 | 파일이나 텍스트를 지정한 언어로 번역 및 로컬라이즈 |
 
