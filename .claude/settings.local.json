@@ -15,7 +15,14 @@
       "Bash(mv test-case-writer.md tester.md)",
       "Bash(mv builder.md implementer.md)",
       "Bash(mv tester.md tc-writer.md)",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "Bash(rm ~/.claude/agents/code-researcher.md)",
+      "Bash(rm ~/.claude/agents/design-architect.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/.claude/agents/researcher.md ~/.claude/agents/researcher.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/.claude/agents/designer.md ~/.claude/agents/designer.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/.claude/agents/planner.md ~/.claude/agents/planner.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/.claude/agents/implementer.md ~/.claude/agents/implementer.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/.claude/agents/tc-writer.md ~/.claude/agents/tc-writer.md)"
     ]
   }
 }
