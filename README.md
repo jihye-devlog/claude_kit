@@ -20,6 +20,7 @@ claude_kit/
 │   │   ├── PLAN.md
 │   │   ├── DESIGN.md
 │   │   └── RESEARCH.md
+│   ├── COMMIT_CONVENTION.md
 │   └── memory/
 ├── custom_script/
 │   ├── keybindings/
@@ -44,9 +45,12 @@ claude_kit/
 │   ├── save-progress/
 │   │   ├── save-progress.md
 │   │   └── README.md
-│   └── sync-readme/
-│       ├── sync-readme.md
-│       ├── check-sync.sh
+│   ├── sync-readme/
+│   │   ├── sync-readme.md
+│   │   ├── check-sync.sh
+│   │   └── README.md
+│   └── commit/
+│       ├── commit.md
 │       └── README.md
 └── study/
     ├── plugin.md
@@ -65,6 +69,7 @@ claude_kit/
 | [lessons](./custom_skills/lessons) | 스킬 | Claude 실수를 기록하고 반복 방지 |
 | [review](./custom_skills/review) | 스킬 | 작업 완료 후 변경된 코드와 파일을 자체 검토하고 문제 수정 |
 | [sync-readme](./custom_skills/sync-readme) | 스킬 | 레포 유형을 분석해 변경 사항에 맞는 README 자동 업데이트 |
+| [commit](./custom_skills/commit) | 스킬 | `.claude/COMMIT_CONVENTION.md` 규칙을 읽어 변경사항을 규칙에 맞게 커밋하고 푸시 |
 | [.claude/agents/researcher.md](./.claude/agents/researcher.md) | 에이전트 | 코드베이스를 분석해 구조, 동작, 아키텍처를 파악하고 .claude/doc/RESEARCH.md 작성 |
 | [.claude/agents/planner.md](./.claude/agents/planner.md) | 에이전트 | 사용자 요청과 RESEARCH.md를 기반으로 구현 계획을 수립하고 .claude/doc/PLAN.md 작성 |
 | [.claude/agents/designer.md](./.claude/agents/designer.md) | 에이전트 | PLAN.md를 기반으로 코드 수준의 아키텍처를 설계하고 .claude/doc/DESIGN.md 작성 |
@@ -90,7 +95,7 @@ claude_kit/
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "이번 턴(가장 최근 user 메시지 이후)에 Claude 가 직접 Edit 또는 Write 도구로 실제 코드 파일을 편집했는지 확인하세요. 실제 코드 파일 예: .py .ts .tsx .js .jsx .go .rs .java .kt .rb .php .c .cpp .h .hpp .swift .cs .scala .sh .sql 및 src/ tests/ app/ lib/ 등 프로젝트 소스 경로 아래의 파일. 다음 경우에는 이 훅을 실행하지 말고 즉시 종료를 허용합니다: (1) 이번 턴에 Edit/Write 호출이 전혀 없었다. (2) 이번 턴에 편집한 파일이 .md / README.md / 문서/설정 파일뿐이다. (3) 이번 턴에 이미 verifier 에이전트가 Agent 도구로 호출된 적이 있다(중복 방지). (4) 프로젝트 루트 CLAUDE.md 의 '## 빌드 & 테스트' 섹션이 비어있어 실행할 명령이 없고 verifier 도 추론 실패가 확실한 상황이다. 그 외의 경우에는 Agent 도구로 subagent_type=\"verifier\" 를 호출해 Full 모드 검증을 수행하세요. 호출 시 프롬프트에 '모드: Full' 과 '이번 턴에 편집된 파일 경로 목록' 을 반드시 명시하세요. verifier 가 실패를 반환하면 카테고리별 권고(implementer 또는 tc-writer 재호출) 를 사용자에게 전달하세요."
+            "prompt": "이번 턴(가장 최근 user 메시지 이후)에 Claude 가 직접 Edit 또는 Write 도구로 실제 코드 파일을 편집했는지 확인하세요. 실제 코드 파일 예: .py .ts .tsx .js .jsx .go .rs .java .kt .rb .php .c .cpp .h .hpp .swift .cs .scala .sh .sql 및 src/ tests/ app/ lib/ 등 프로젝트 소스 경로 아래의 파일. 다음 경우에는 이 훅을 실행하지 말고 즉시 종료를 허용합니다: (1) 이번 턴에 Edit/Write 호출이 전혀 없었다. (2) 이번 턴에 편집한 파일이 .md / README.md / 문서/설정 파일뿐이다. (3) 이번 턴에 이미 verifier 에이전트가 Agent 도구로 호출된 적이 있다(중복 방지). (4) 프로젝트 루트 CLAUDE.md 의 '## 빌드 & 테스트' 섹션이 비어있어 실행할 명령이 없고 verifier 도 추론 실패가 확실한 상황이다. (5) 마지막 응답이 사용자에게 확인·승인·진행 여부를 묻는 질문으로 끝났다 — 이 경우 어떤 스킬도 실행하지 않고 즉시 종료한다. 그 외의 경우에는 Agent 도구로 subagent_type=\"verifier\" 를 호출해 Full 모드 검증을 수행하세요. 호출 시 프롬프트에 '모드: Full' 과 '이번 턴에 편집된 파일 경로 목록' 을 반드시 명시하세요. verifier 가 실패를 반환하면 카테고리별 권고(implementer 또는 tc-writer 재호출) 를 사용자에게 전달하세요."
           }
         ]
       }
