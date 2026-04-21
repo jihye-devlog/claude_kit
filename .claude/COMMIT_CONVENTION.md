@@ -23,10 +23,20 @@
 | README | README 수정 |
 | PLUGINS | 플러그인 관련 변경 |
 
+## 서브 타겟
+
+SKILLS, AGENTS 카테고리는 두 번째 prefix 로 대상 이름을 명시할 수 있다.
+
+```
+[SKILLS][COMMIT] push 단계 추가
+[AGENTS][PLANNER] 간략화
+```
+
 ## 예시
 
 ```
 [SKILLS] commit 스킬 추가
+[SKILLS][COMMIT] push 단계 추가
 [AGENTS][PLANNER] 간략화
 [SKILLS][REVIEW][SYNC-README] hook 조건 변경
 [STUDY] tmux 단축키 정리

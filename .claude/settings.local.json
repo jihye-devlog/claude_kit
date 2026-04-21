@@ -27,7 +27,9 @@
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/custom_skills/review/review.md /Users/yunjihye/.claude/commands/review.md)",
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/implementer.md /Users/yunjihye/.claude/agents/implementer.md)",
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/planner.md /Users/yunjihye/.claude/agents/planner.md)",
-      "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/tc-writer.md /Users/yunjihye/.claude/agents/tc-writer.md)"
+      "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/tc-writer.md /Users/yunjihye/.claude/agents/tc-writer.md)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
