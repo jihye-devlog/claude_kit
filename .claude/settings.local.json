@@ -30,7 +30,9 @@
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/tc-writer.md /Users/yunjihye/.claude/agents/tc-writer.md)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(mkdir -p /Users/yunjihye/workspace/REPO/claude_kit/.claude/commands)",
+      "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/custom_skills/setup/setup.md /Users/yunjihye/workspace/REPO/claude_kit/.claude/commands/setup.md)"
     ]
   }
 }

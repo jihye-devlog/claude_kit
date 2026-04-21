@@ -45,6 +45,9 @@ claude_kit/
 │   ├── save-progress/
 │   │   ├── save-progress.md
 │   │   └── README.md
+│   ├── setup/
+│   │   ├── setup.md
+│   │   └── README.md
 │   ├── sync-readme/
 │   │   ├── sync-readme.md
 │   │   ├── check-sync.sh
@@ -68,6 +71,7 @@ claude_kit/
 | [add-tool](./custom_skills/add-tool) | 스킬 | 스킬/에이전트/스크립트 파일을 레포에 자동 등록 |
 | [lessons](./custom_skills/lessons) | 스킬 | Claude 실수를 기록하고 반복 방지 |
 | [review](./custom_skills/review) | 스킬 | 작업 완료 후 변경된 코드와 파일을 자체 검토하고 문제 수정 |
+| [setup](./custom_skills/setup) | 스킬 | 새 PC에서 claude_kit 환경을 한 번에 맞추기 |
 | [sync-readme](./custom_skills/sync-readme) | 스킬 | 레포 유형을 분석해 변경 사항에 맞는 README 자동 업데이트 |
 | [commit](./custom_skills/commit) | 스킬 | `.claude/COMMIT_CONVENTION.md` 규칙을 읽어 변경사항을 규칙에 맞게 커밋하고 푸시 |
 | [.claude/agents/researcher.md](./.claude/agents/researcher.md) | 에이전트 | 코드베이스를 분석해 구조, 동작, 아키텍처를 파악하고 .claude/doc/RESEARCH.md 작성 |
