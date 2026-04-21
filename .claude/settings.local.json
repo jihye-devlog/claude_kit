@@ -29,7 +29,8 @@
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/planner.md /Users/yunjihye/.claude/agents/planner.md)",
       "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/.claude/agents/tc-writer.md /Users/yunjihye/.claude/agents/tc-writer.md)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }

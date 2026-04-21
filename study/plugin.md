@@ -1,8 +1,35 @@
-## commit-commands
-
 ## code-simpler
+  code-simplifier
+  - 최근 수정된 코드를 자동으로 리뷰해서 가독성·일관성·유지보수성을 개선
+  - 기능은 절대 바꾸지 않고, 구조와 표현만 정리
+  - 주로 하는 것: 불필요한 중첩 제거, 중복 코드 정리, 변수명 개선,
+  불필요한 주석 제거
+
+  특징:
+  - Opus 모델 사용 (다른 스킬보다 강력)
+  - 코드 작성/수정 후 자동으로 동작하도록 설계됨
+  - "적게 쓴다"보다 "명확하게 쓴다"를 우선
+
+  현재 이 레포는 주로 md 파일이라 코드 리뷰 용도로는 잘 안 쓰일 것
+  같지만, 스크립트 파일 작업할 때 유용합니다.
 
 ## claude-md-management
+⏺ 두 가지 기능이 있습니다.
+
+  1. revise-claude-md 커맨드 (/revise-claude-md)
+  - 현재 세션에서 배운 것들을 CLAUDE.md 에 반영하는 용도
+  - 세션 중 발견한 명령어, 패턴, 주의사항 등을 정리해서 추가 제안
+  - 사용자 승인 후 적용
+
+  2. claude-md-improver 스킬
+  - 레포 전체의 CLAUDE.md 파일을 감사(audit)하는 용도
+  - 각 파일을 점수(A~F)로 평가 후 품질 리포트 출력
+  - 빠진 섹션, 오래된 내용, 개선 포인트 제안 → 승인 후 수정
+
+  언제 쓰냐면:
+  - 세션 끝날 때 이번에 발견한 것들을 CLAUDE.md 에 기록하고 싶을 때 →
+  /revise-claude-md
+  - CLAUDE.md 전반적으로 점검하고 싶을 때 → claude-md-improver
 
 ## skill-creator
 ### skill-creator 통해 스킬 생성
