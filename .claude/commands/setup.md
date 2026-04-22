@@ -55,7 +55,9 @@ chmod +x ~/.claude/statusline.sh
 
 ### 5단계: keybindings 설치 여부 확인
 
-사용자에게 묻는다:
+`~/.claude/keybindings.json` 이 레포의 `custom_script/keybindings/keybindings.json` 과 동일하면 "이미 설치됨" 으로 건너뛴다.
+
+다르거나 없으면 사용자에게 묻는다:
 
 ```
 keybindings.json 을 설치하시겠습니까?
@@ -71,7 +73,9 @@ cp custom_script/keybindings/keybindings.json ~/.claude/keybindings.json
 
 ### 6단계: sync-readme 훅 방식 선택
 
-사용자에게 묻는다:
+`~/.claude/settings.json` 에 아래 Stop 훅 prompt 가 이미 존재하면 "이미 설치됨" 으로 건너뛴다. UserPromptSubmit 방식이 이미 존재해도 마찬가지로 건너뛴다.
+
+설치되어 있지 않으면 사용자에게 묻는다:
 
 ```
 sync-readme 자동 실행 방식을 선택하세요:
@@ -110,7 +114,9 @@ UserPromptSubmit 훅 선택 시 추가할 내용:
 
 ### 7단계: review 훅 설치 여부 확인
 
-사용자에게 묻는다:
+`~/.claude/settings.json` Stop 훅에 review prompt 가 이미 존재하면 "이미 설치됨" 으로 건너뛴다.
+
+설치되어 있지 않으면 사용자에게 묻는다:
 
 ```
 review 스킬을 Stop 훅으로 자동 실행하도록 설정하시겠습니까?
@@ -128,7 +134,9 @@ y 이면 `~/.claude/settings.json` Stop 훅에 아래를 추가한다:
 
 ### 8단계: verifier 훅 설치 여부 확인
 
-사용자에게 묻는다:
+`~/.claude/settings.json` Stop 훅에 verifier prompt 가 이미 존재하면 "이미 설치됨" 으로 건너뛴다.
+
+설치되어 있지 않으면 사용자에게 묻는다:
 
 ```
 verifier 에이전트를 Stop 훅으로 자동 실행하도록 설정하시겠습니까?
@@ -146,7 +154,9 @@ y 이면 `~/.claude/settings.json` Stop 훅에 아래를 추가한다:
 
 ### 9단계: notification 훅 설치 여부 확인
 
-사용자에게 묻는다:
+`~/.claude/settings.json` 에 notification Stop 훅(notify.sh 커맨드)과 Notification 훅이 이미 존재하면 "이미 설치됨" 으로 건너뛴다.
+
+설치되어 있지 않으면 사용자에게 묻는다:
 
 ```
 작업 완료·응답 필요 시 OS 알림을 받도록 설정하시겠습니까?
@@ -162,7 +172,7 @@ y 이면 `~/.claude/settings.json` 에 아래를 추가한다:
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/notify.sh 'Claude Code' '작업이 완료되었습니다' > /dev/null 2>&1"
+            "command": "bash ~/.claude/notify.sh 'Claude Code' '작업이 완료되었습니다'"
           }
         ]
       }
@@ -172,7 +182,7 @@ y 이면 `~/.claude/settings.json` 에 아래를 추가한다:
         "hooks": [
           {
             "type": "command",
-            "command": "MSG=$(jq -r '.message // \"응답이 필요합니다\"' 2>/dev/null || echo '응답이 필요합니다'); bash ~/.claude/notify.sh 'Claude Code' \"$MSG\" > /dev/null 2>&1"
+            "command": "MSG=$(jq -r '.message // \"응답이 필요합니다\"' 2>/dev/null || echo '응답이 필요합니다'); bash ~/.claude/notify.sh 'Claude Code' \"$MSG\""
           }
         ]
       }
@@ -183,7 +193,9 @@ y 이면 `~/.claude/settings.json` 에 아래를 추가한다:
 
 ### 10단계: statusline 설치 여부 확인
 
-사용자에게 묻는다:
+`~/.claude/settings.json` 에 statusLine 설정이 이미 존재하면 "이미 설치됨" 으로 건너뛴다.
+
+설치되어 있지 않으면 사용자에게 묻는다:
 
 ```
 Claude Code 하단 상태바를 커스터마이징하도록 설정하시겠습니까?
@@ -201,14 +213,52 @@ y 이면 `~/.claude/settings.json` 에 아래를 추가한다:
 }
 ```
 
-### 11단계: settings.json 병합
+### 11단계: 글로벌 설정 적용
+
+`study/global_settings.md` 에 정의된 기본 설정을 `~/.claude/settings.json` 에 반영한다. 이미 동일한 값이 설정되어 있으면 "이미 설치됨" 으로 건너뛴다.
+
+빠진 항목이 있으면 사용자에게 묻는다:
+
+```
+글로벌 기본 설정을 적용하시겠습니까?
+- permissions: defaultMode=acceptEdits, allow=[Write,Edit,Glob,Grep,Read]
+- model: claude-sonnet-4-6
+- env: CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
+- teammateMode: tmux
+- skipDangerousModePermissionPrompt: true
+(y/n)
+```
+
+y 이면 `~/.claude/settings.json` 에 아래 항목들을 병합한다:
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Read"
+    ]
+  },
+  "model": "claude-sonnet-4-6",
+  "teammateMode": "tmux",
+  "skipDangerousModePermissionPrompt": true
+}
+```
+
+### 12단계: settings.json 병합
 
 위 단계에서 수집한 모든 설정을 `~/.claude/settings.json` 의 기존 내용과 병합한다.
 - 기존 파일이 없으면 새로 생성한다
 - 기존 hooks 배열이 있으면 항목을 추가하고, 없으면 새로 만든다
 - 중복 항목은 추가하지 않는다
 
-### 12단계: 완료 보고
+### 13단계: 완료 보고
 
 설치된 항목을 표로 출력한다.
 
@@ -218,12 +268,13 @@ y 이면 `~/.claude/settings.json` 에 아래를 추가한다:
 | 스킬 (N개) | 설치됨 |
 | notify.sh | 설치됨 |
 | statusline.sh | 설치됨 |
-| keybindings.json | 설치됨 / 건너뜀 |
-| sync-readme 훅 | Stop / UserPromptSubmit / 건너뜀 |
-| review 훅 | 설치됨 / 건너뜀 |
-| verifier 훅 | 설치됨 / 건너뜀 |
-| notification 훅 | 설치됨 / 건너뜀 |
-| statusline 설정 | 설치됨 / 건너뜀 |
+| keybindings.json | 설치됨 / 이미 설치됨 / 건너뜀 |
+| sync-readme 훅 | Stop / UserPromptSubmit / 이미 설치됨 / 건너뜀 |
+| review 훅 | 설치됨 / 이미 설치됨 / 건너뜀 |
+| verifier 훅 | 설치됨 / 이미 설치됨 / 건너뜀 |
+| notification 훅 | 설치됨 / 이미 설치됨 / 건너뜀 |
+| statusline 설정 | 설치됨 / 이미 설치됨 / 건너뜀 |
+| 글로벌 기본 설정 | 설치됨 / 이미 설치됨 / 건너뜀 |
 
 마지막으로 안내한다:
 ```
