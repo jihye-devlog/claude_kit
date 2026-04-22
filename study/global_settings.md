@@ -1,3 +1,5 @@
+~/.claude/settings.json
+
 ## 에이전트 팀 실행
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
@@ -29,25 +31,6 @@
       "Read"
     ]
   },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/notify.sh 'Claude Code' '작업이 완료되었습니다' > /dev/null 2>&1"
-          },
-          {
-            "type": "prompt",
-            "prompt": "이번 턴 Edit/Write 없거나 README/sync-readme 산출물뿐이면 종료. 그 외 코드·문서 편집 있고 sync-readme 미실행이면 skill-executor로 sync-readme 실행."
-          },
-          {
-            "type": "prompt",
-            "prompt": "이번 턴 Edit/Write 없거나 README/sync-readme 산출물뿐이면 종료. 그 외 코드·문서 편집 있고 review 미실행이면 review 스킬 실행."
-          }
-        ]
-      }
-    ],
   "skipDangerousModePermissionPrompt": true,
 
 ## 기본 모델 설정
@@ -62,4 +45,4 @@
   └─────────────────────────────────────────────┴────────────┘
   - opus 는 1M, Sonnet은 200K
   "model": "claude-sonnet-4-6"
-}
+

@@ -32,7 +32,24 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(mkdir -p /Users/yunjihye/workspace/REPO/claude_kit/.claude/commands)",
-      "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/custom_skills/setup/setup.md /Users/yunjihye/workspace/REPO/claude_kit/.claude/commands/setup.md)"
+      "Bash(cp /Users/yunjihye/workspace/REPO/claude_kit/custom_skills/setup/setup.md /Users/yunjihye/workspace/REPO/claude_kit/.claude/commands/setup.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_skills/add-tool/add-tool.md ~/.claude/commands/add-tool.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_skills/lessons/lessons.md ~/.claude/commands/lessons.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_skills/review/review.md ~/.claude/commands/review.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_skills/save-progress/save-progress.md ~/.claude/commands/save-progress.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_skills/sync-readme/sync-readme.md ~/.claude/commands/sync-readme.md)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_script/notification/notify.sh ~/.claude/notify.sh)",
+      "Bash(chmod +x ~/.claude/notify.sh)",
+      "Bash(cp /workspace/sofia_project/claude_kit/custom_script/statusline/statusline.sh ~/.claude/statusline.sh)",
+      "Bash(chmod +x ~/.claude/statusline.sh)",
+      "Bash(git config:*)",
+      "Bash(python3 -m json.tool)",
+      "Bash(bash ~/.claude/notify.sh 'Claude Code' '테스트')",
+      "Bash(echo \"exit: $?\")",
+      "Bash(powershell.exe -Command \"echo test\")",
+      "Bash(command -v notify-send)",
+      "Read(//proc/sys/fs/binfmt_misc/**)",
+      "Read(//etc/**)"
     ]
   }
 }
